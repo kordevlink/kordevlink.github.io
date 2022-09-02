@@ -35,7 +35,7 @@
 				<center><h1><i class="fa-brands fa-connectdevelop"></i> <span class='typing-txt'>데브링크</span></h1></center>
 			</div>
 			<div id="head_right">
-				<a href="#"><i class="fa-solid fa-house"></i></a>
+				<a href="https://devlink.pages.dev/"><i class="fa-solid fa-house"></i></a>
 				: 
 				<a href="#"><i class="fa-sharp fa-solid fa-circle-question"></i></a>
 				: 
@@ -83,7 +83,7 @@
 
 					<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="https://abc.com" id="input_tag_link" onkeyup="enterkey()">
 					<button type="button" value="" onclick="javascript:func_insert_link();" class="btn btn-warning">
-						<i class="fas fa-chevron-circle-down"></i> &nbsp;저장
+						<i class="fas fa-chevron-circle-down"></i> &nbsp;링크저장
 					</button>
 				</div>
 	</div>
@@ -91,19 +91,27 @@
 	<div id="layer_02" class="raw col-md-10 col-lg-8 mx-auto contents" style="height:63px;">
 		<div id="category_pc" class="category_txt">
 			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-				<button type="button" class="btn btn-success" onclick="javascript:func_get_data(page, 'all', sort, delay);" id="btn_category_pc_all"><i class="fa-solid fa-cubes"></i> 전 체</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'toy', sort, delay);" id="btn_category_pc_toy"><i class="fa-brands fa-sketch"></i> 토이프로젝트</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'github', sort, delay);" id="btn_category_pc_github"><i class="fa-brands fa-github-alt"></i> 깃허브</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'blog', sort, delay);" id="btn_category_pc_blog"><i class="fa-brands fa-blogger-b"></i> 블로그</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'etc', sort, delay);" id="btn_category_pc_etc"><i class="fa-brands fa-blackberry"></i> 기 타</button>
+				<button type="button" class="btn btn-success" onclick="javascript:func_get_data(page, 'all', sort, delay, search);" id="btn_category_pc_all"><i class="fa-solid fa-cubes"></i> 전 체</button>
+				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'toy', sort, delay, search);" id="btn_category_pc_toy"><i class="fa-brands fa-sketch"></i> 토이프로젝트</button>
+				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'github', sort, delay, search);" id="btn_category_pc_github"><i class="fa-brands fa-github-alt"></i> 깃허브</button>
+				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'blog', sort, delay, search);" id="btn_category_pc_blog"><i class="fa-brands fa-blogger-b"></i> 블로그</button>
+				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'etc', sort, delay, search);" id="btn_category_pc_etc"><i class="fa-brands fa-blackberry"></i> 기 타</button>
 			</div>
 		</div>
 		<div id="right_dropdown">
-			<button type="button" value="" onclick="" class="btn btn-success">
-				<i class="fa-solid fa-magnifying-glass"></i> 검색
-			</button> 
+			<div class="btn-group" role="group">
+				<button id="btnGroupDrop1" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fa-solid fa-magnifying-glass"></i> 검색
+				</button>
+				<ul class="dropdown-menu" style="border:none; z-index:999;position:relative;">
+					<div class="input-group mb-3">
+						<input id="input_search" type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon"  onkeyup="enterkey_search()">
+						<button class="btn btn-outline-success" type="button" id="button-addon2" onclick="javascript:func_search();">확인</button>
+					</div>
+				</ul>
+			</div>
 			
-			<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+			<button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 				<i class="fa-solid fa-arrow-down-up-across-line"></i> <span id="span_sort_btn_name">최신순</span>
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -125,15 +133,15 @@
 				<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 						<button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="mobile_category_name">카테고리</button>
 						<ul class="dropdown-menu">
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'all', sort, delay);">전체</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'all', sort, delay, search);">전체</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'toy', sort, delay);">토이프로젝트</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'toy', sort, delay, search);">토이프로젝트</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'github', sort, delay);">깃허브</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'github', sort, delay, search);">깃허브</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'blog', sort, delay);">블로그</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'blog', sort, delay, search);">블로그</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'etc', sort, delay);">기타</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'etc', sort, delay, search);">기타</a></li>
 						</ul>
 				</div>
 		</div>
