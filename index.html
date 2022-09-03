@@ -100,12 +100,12 @@
 		</div>
 		<div id="right_dropdown">
 			<div class="btn-group" role="group">
-				<button id="btnGroupDrop1" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				<button id="btn_search_start" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" onclick="javascript:focus_search();">
 					<i class="fa-solid fa-magnifying-glass"></i> 검색
 				</button>
 				<ul class="dropdown-menu" style="border:none; z-index:999; position:relative; width:180px;">
 					<div class="input-group mb-3" style="height:25px !important;">
-						<input id="input_search" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon"  onkeyup="enterkey_search();">
+						<input id="input_search" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon"  onkeyup="javascript:enterkey_search();">
 						<button class="btn btn-outline-success" type="button" onclick="javascript:func_search();"><b>확인</b></button>
 					</div>
 				</ul>
@@ -126,6 +126,8 @@
 				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('reg_date');"> 최신순</a></li>
 				<li><hr class="dropdown-divider"></li>
 				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('random');"> 랜덤순</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('only_favor');"> 즐겨찾기만</a></li>
 			</ul>
 		</div>
 
