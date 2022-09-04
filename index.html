@@ -24,9 +24,9 @@
 
 </head>
 <body onselectstart="return false" ondragstart="return false">
-	<div id="top" class="raw col-md-10 col-lg-8 mx-auto">
+	<div id="top" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto">
 	</div>
-	<div id="layer_01" class="raw col-md-10 col-lg-8 mx-auto contents">
+	<div id="layer_01" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto contents">
 		<div id="head">
 			<div id="head_left">
 				
@@ -88,76 +88,93 @@
 				</div>
 	</div>
 	<div class="space"></div>
-	<div id="layer_02" class="raw col-md-10 col-lg-8 mx-auto contents" style="height:63px;">
-		<div id="category_pc" class="category_txt">
-			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-				<button type="button" class="btn btn-success" onclick="javascript:func_get_data(page, 'all', sort, delay, search);" id="btn_category_pc_all"><i class="fa-solid fa-cubes"></i> 전 체</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'toy', sort, delay, search);" id="btn_category_pc_toy"><i class="fa-brands fa-sketch"></i> 토이프로젝트</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'github', sort, delay, search);" id="btn_category_pc_github"><i class="fa-brands fa-github-alt"></i> 깃허브</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'blog', sort, delay, search);" id="btn_category_pc_blog"><i class="fa-brands fa-blogger-b"></i> 블로그</button>
-				<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'etc', sort, delay, search);" id="btn_category_pc_etc"><i class="fa-brands fa-blackberry"></i> 기 타</button>
-			</div>
-		</div>
-		<div id="right_dropdown">
-			<div class="btn-group" role="group">
-				<button id="btn_search_start" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" onclick="javascript:focus_search();">
-					<i class="fa-solid fa-magnifying-glass"></i> 검색
-				</button>
-				<ul class="dropdown-menu" style="border:none; z-index:999; position:relative; width:180px;">
-					<div class="input-group mb-3" style="height:25px !important;">
-						<input id="input_search" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon"  onkeyup="javascript:enterkey_search();">
-						<button class="btn btn-outline-success" type="button" onclick="javascript:func_search();"><b>확인</b></button>
+	<div id="layer_02" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto contents" style="height:63px;">
+	
+		<!-- (START) cell -->
+		<div id="cell">
+			<div id="cell_left">
+					<!-- (START) category : PC -->
+					<div id="category_pc" class="category_txt">
+						<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+							<button type="button" class="btn btn-success" onclick="javascript:func_get_data(page, 'all', sort, delay, search);" id="btn_category_pc_all"><i class="fa-solid fa-cubes"></i> 전 체</button>
+							<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'toy', sort, delay, search);" id="btn_category_pc_toy"><i class="fa-brands fa-sketch"></i> 토이프로젝트</button>
+							<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'github', sort, delay, search);" id="btn_category_pc_github"><i class="fa-brands fa-github-alt"></i> 깃허브</button>
+							<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'blog', sort, delay, search);" id="btn_category_pc_blog"><i class="fa-brands fa-blogger-b"></i> 블로그</button>
+							<button type="button" class="btn btn-outline-success" onclick="javascript:func_get_data(page, 'etc', sort, delay, search);" id="btn_category_pc_etc"><i class="fa-brands fa-blackberry"></i> 기 타</button>
+						</div>
 					</div>
-				</ul>
+					<!-- (END) category : PC -->
+
+					<!-- (START) category : Mobile -->
+					<div id="category_mobile" class="category_txt">
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+									<button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="mobile_category_name">카테고리</button>
+									<ul class="dropdown-menu">
+										<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'all', sort, delay, search);">전체</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'toy', sort, delay, search);">토이프로젝트</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'github', sort, delay, search);">깃허브</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'blog', sort, delay, search);">블로그</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'etc', sort, delay, search);">기타</a></li>
+									</ul>
+							</div>
+					</div>
+					<!-- (END) category : Mobile -->
 			</div>
 			
-			<button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-				<i class="fa-solid fa-arrow-down-up-across-line"></i> <span id="span_sort_btn_name">최신순</span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('vote');"> 추천순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('favorite');"> 즐찾순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('reple');"> 댓글순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('click');"> 조회순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('reg_date');"> 최신순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('random');"> 랜덤순</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('only_favor');"> 즐겨찾기만</a></li>
-			</ul>
-		</div>
-
-		<div id="category_mobile" class="category_txt">
-				<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-						<button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="mobile_category_name">카테고리</button>
-						<ul class="dropdown-menu">
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'all', sort, delay, search);">전체</a></li>
+			<div id="cell_right">
+					<!-- (START) sort -->
+					<div id="right_dropdown">
+						<div class="btn-group" role="group">
+							<button id="btn_search_start" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" onclick="javascript:focus_search();">
+								<i class="fa-solid fa-magnifying-glass"></i> 검색
+							</button>
+							<ul class="dropdown-menu" style="border:none; z-index:999; position:relative; width:180px;">
+								<div class="input-group mb-3" style="height:25px !important;">
+									<input id="input_search" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon"  onkeyup="javascript:enterkey_search();">
+									<button class="btn btn-outline-success" type="button" onclick="javascript:func_search();"><b>확인</b></button>
+								</div>
+							</ul>
+						</div>
+						
+						<button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="fa-solid fa-arrow-down-up-across-line"></i> <span id="span_sort_btn_name">최신순</span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('vote');"> 추천순</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'toy', sort, delay, search);">토이프로젝트</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('favorite');"> 즐찾순</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'github', sort, delay, search);">깃허브</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('reple');"> 댓글순</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'blog', sort, delay, search);">블로그</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('click');"> 조회순</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li class="category_li"><a class="dropdown-item" href="javascript:func_get_data(page, 'etc', sort, delay, search);">기타</a></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('reg_date');"> 최신순</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('random');"> 랜덤순</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li class="category_li"><a class="dropdown-item" href="javascript:func_active_sort('only_favor');"> 즐겨찾기만</a></li>
 						</ul>
-				</div>
+					</div>
+					<!-- (END) sort -->
+			</div>
+
 		</div>
+		<!-- (END) cell -->
 	</div>
-	<div class="space col-md-10 col-lg-8 mx-auto">
+	<div class="space col-md-10 col-lg-11 col-xl-8 mx-auto">
 		
 	</div>
-	<div id="layer_03" class="raw col-md-10 col-lg-8 mx-auto contents">
+	<div id="layer_03" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto contents">
 		<div id="result">
 		<center><img src="https://devlink.pages.dev/images/loading2.gif" id="img_loading" /></center>
 		</div>
 	</div>
 	<div class="space"></div>
-	<div id="layer_04" class="raw col-md-10 col-lg-8 mx-auto contents">
+	<div id="layer_04" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto contents">
 		<center>
 			<i class="fa-brands fa-connectdevelop"></i> <a href="https://devlink.pages.dev/" class="id_link">Devlink</a>
 		</center>
