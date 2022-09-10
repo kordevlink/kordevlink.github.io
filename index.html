@@ -20,10 +20,14 @@
 </style>
 
 <script type="text/javascript">
+/*
+ver0.1 = 2022-09-10 오전 10:44 / 2
+
+*/
 </script>
 
 </head>
-<body onselectstart="return false" ondragstart="return false">
+<body>
 	<div id="top" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto">
 	</div>
 	<div id="layer_01" class="raw col-md-10 col-lg-11 col-xl-8 mx-auto contents">
@@ -83,7 +87,7 @@
 
 					<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="https://abc.com" id="input_tag_link" onkeyup="enterkey()">
 					<button type="button" value="" onclick="javascript:func_insert_link();" class="btn btn-warning">
-						<i class="fas fa-chevron-circle-down"></i> &nbsp;링크저장
+						<i class="fas fa-chevron-circle-down"></i> &nbsp;<span id="btn_save_txt">링크저장</span>
 					</button>
 				</div>
 	</div>
@@ -129,7 +133,7 @@
 					<!-- (START) sort -->
 					<div id="right_dropdown">
 						<div class="btn-group" role="group">
-							<button id="btn_search_start" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" onclick="javascript:focus_search();">
+							<button id="btn_search_start" type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown">
 								<i class="fa-solid fa-magnifying-glass"></i> 검색
 							</button>
 							<ul class="dropdown-menu" style="border:none; z-index:999; position:relative; width:180px;">
